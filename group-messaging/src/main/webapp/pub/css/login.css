@@ -1,0 +1,99 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+    margin: 0; /* Remove default margin */
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1; /* Make the app take up the remaining vertical space */
+}
+
+.container {
+    width: 350px;
+    margin-top: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    background-color: white;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #FF8800;
+}
+.header-text {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 2.3em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.form {
+    width: 60%;
+    height: 20px;
+    background: #E0DEDE;
+    justify-content: center;
+    display: flex;
+    margin: 20px auto;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+.button {
+    width: 60%;
+    height: 40px;
+    margin: 10px auto;
+    justify-content: center;
+    display: block;
+    color: #fff;
+    background: #FE8E02;
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s ease-in;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.signup {
+    margin-top: 55px; /* Push the footer to the bottom */
+    min-height: 80px;
+    border-radius: 100px 100px 0px 0px;
+    background-color: #333;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    padding-top: 15px;
+    transition: height 0s ease-in-out;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.signup-fields {
+    margin-top: 12.5px;
+}
+.signup:hover {
+    background-color: #FE8E02;
+    cursor: pointer;
+}
+.signup:active {
+}
+.footer {
+    margin-top: auto; /* Push the footer to the bottom */
+    background-color: #333;
+    width: 100vw;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
