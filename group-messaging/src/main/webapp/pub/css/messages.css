@@ -1,0 +1,29 @@
+body {
+    background: linear-gradient(to bottom, #FF8800, #E0DEDE, #FF8800);
+}
+.section {
+    padding: 10px;
+}
+.title {
+    text-align: center;
+    padding: 5px;
+}
+.message {
+    margin-bottom: 5px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: white;
+    width: 30vw;
+
+}
+
+.message-text {
+    font-size: 22px;
+    width: auto;
+}
+
+.user-email {
+    font-size: 10px;
+    color: #333333;
+    margin-bottom: -5px;
+}

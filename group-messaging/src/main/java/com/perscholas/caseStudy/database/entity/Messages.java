@@ -18,9 +18,12 @@ public class Messages {
     @Column(name = "user_email")
     private String email;
 
-    @Column(name = "topic")
-    private String topic;
-
     @Column(name = "message")
     private String message;
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "topic_id", nullable = false)  // Foreign key referencing Topics
+    private Topics topic;
+
+    // Constructors, getters, and setters can be added as needed
 }

@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -20,6 +22,9 @@ public class Topics {
 
     @Column(name = "description")
     private String description;
+
+    @OneToMany(mappedBy = "topic", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Messages> messages;
 
     // Constructors, getters, and setters can be added as needed
 }
