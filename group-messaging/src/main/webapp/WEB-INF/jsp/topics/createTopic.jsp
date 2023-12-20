@@ -44,9 +44,9 @@
 
     <script>
         function updateCharacterCount(textarea) {
-            var characterCountElement = document.getElementById('characterCount');
-            var maxLength = 500;
-            var currentLength = textarea.value.length;
+            const characterCountElement = document.getElementById('characterCount');
+            const maxLength = 500;
+            const currentLength = textarea.value.length;
 
             characterCountElement.innerText = currentLength + ' characters';
 

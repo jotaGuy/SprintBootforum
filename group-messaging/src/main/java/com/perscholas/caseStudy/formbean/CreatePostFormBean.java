@@ -9,7 +9,7 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 public class CreatePostFormBean {
 
-    @NotEmpty(message = "Must add a title to post")
+    @NotEmpty(message = "Must be authenticated")
     private String authenticatedUserName;
 
     @NotEmpty(message = "Description cannot be empty")

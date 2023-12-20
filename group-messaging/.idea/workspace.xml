@@ -5,47 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="84b78233-3ec2-43ab-9045-4dcf2252e649" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/ClassCaseStudyProject.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/MessagesController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/SlashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/SlashController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/TopicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/TopicController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/dao/MessagesDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/Messages.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/Topics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/Topics.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/enity/SignIn.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/enity/Signup.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/enity/Users.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateMessageFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateMessageFormBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateTopicFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateTopicFormBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/RegisterUserFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/RegisterUserFormBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/service/TopicService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/auth/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/auth/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/auth/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/auth/register.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topicMessages/createMessage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topicMessages/displayMessages.jsp" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/CommentsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/dao/CommentDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/Comments.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateCommentFormBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/comments/addComment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateCustomerFormBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateEmployeeFormBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateMessageFormBean.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreatePostFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreatePostFormBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/comments/comments.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/comments/comments.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/post/post.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topics/createTopic.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topics/createTopic.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topics/search_topics.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pub/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pub/css/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pub/css/topics-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pub/css/topics-list.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +30,8 @@
       <list>
         <option value="package.json" />
         <option value="Kotlin Interface" />
-        <option value="Interface" />
         <option value="CSS File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -164,7 +137,7 @@
       <workItem from="1702943511013" duration="21815000" />
       <workItem from="1703024273309" duration="21583000" />
       <workItem from="1703047445674" duration="5000" />
-      <workItem from="1703047466615" duration="185000" />
+      <workItem from="1703047466615" duration="8032000" />
     </task>
     <servers />
   </component>

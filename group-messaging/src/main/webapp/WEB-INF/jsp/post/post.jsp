@@ -4,13 +4,15 @@
 <link rel="stylesheet" href="../../../pub/css/messages.css">
 
 <section class="section">
-    <h1 class="title">Messages for ${param.topic}</h1>
+    <h1 class="title">Post for ${param.topic}</h1>
 
-    <c:forEach var="message" items="${messages}">
+    <c:forEach var="post" items="${posts}">
+    <div class="card" id="topicList" onclick="redirectToMessages('${post.id}')">
         <div class="message">
-            <p class="message-text">${message.message}</p>
-            <p class="user-email">By: ${message.email}</p>
+            <p class="message-text">${post.message}</p>
+            <p class="user-email">By: ${post.email}</p>
         </div>
+    </div>
     </c:forEach>
 </section>
 
@@ -24,5 +26,12 @@
         <button>Hello</button>
     </a>
 </section>
+
+<script>
+    function redirectToMessages(postId) {
+        window.location.href = "/comments/comments?postId=" + encodeURIComponent(postId);
+    }
+
+</script>
 
 <jsp:include page="../include/footer.jsp" />

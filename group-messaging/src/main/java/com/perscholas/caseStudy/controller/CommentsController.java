@@ -1,7 +1,10 @@
 package com.perscholas.caseStudy.controller;
 
+import com.perscholas.caseStudy.database.dao.CommentDAO;
 import com.perscholas.caseStudy.database.dao.PostDAO;
+import com.perscholas.caseStudy.database.entity.Comments;
 import com.perscholas.caseStudy.database.entity.Posts;
+import com.perscholas.caseStudy.formbean.CreateCommentFormBean;
 import com.perscholas.caseStudy.formbean.CreatePostFormBean;
 import com.perscholas.caseStudy.service.PostService;
 import jakarta.validation.Valid;
@@ -20,34 +23,32 @@ import java.util.List;
 
 @Slf4j
 @Controller
-public class PostController {
+public class CommentsController {
 
     @Autowired
-    private PostDAO postDAO;
+    private CommentDAO commentDAO;
 
     @Autowired
     private PostService postService;
+    @GetMapping("/comments/comments")
+    public ModelAndView displayMessages(@RequestParam(required = true) Integer postId) {
+        ModelAndView response = new ModelAndView("comments/comments");
 
-    @GetMapping("/post/post")
-    public ModelAndView displayMessages(@RequestParam(required = true) String topic) {
+        List<Comments> messages = commentDAO.findByPostId(postId);
 
-        ModelAndView response = new ModelAndView("post/post");
-
-        List<Posts> posts = postDAO.findByTopic(topic);
-
-        response.addObject("posts", posts);
+        response.addObject("messages", messages);
         return response;
     }
 
-    @GetMapping("/post/createPost")
-    public ModelAndView createMessages(@RequestParam(required = true) String topic) {
-
-        return new ModelAndView("post/createPost");
+    @GetMapping("/comments/addComment")
+    public ModelAndView createComment(@RequestParam(required = true) Integer postId) {
+        ModelAndView response = new ModelAndView("comments/addComment");
+        return response;
     }
 
-    @PostMapping("/post/submitPost")
-    public ModelAndView submitPost(@ModelAttribute("createPostFormBean") @Valid CreatePostFormBean form, BindingResult result) {
-        ModelAndView response = new ModelAndView("post/createTopic");
+    @PostMapping("/comments/submitComment")
+    public ModelAndView submitComment(@ModelAttribute("createPostFormBean") @Valid CreateCommentFormBean form, BindingResult result) {
+        ModelAndView response = new ModelAndView("comments/addComment");
 
         if (result.hasErrors()) {
             for (FieldError error : result.getFieldErrors()) {
@@ -57,10 +58,8 @@ public class PostController {
             return response;
         }
 
-
-        postService.createPost(form);
         response.setViewName("redirect:/post/post");
-
         return response;
     }
+
 }
