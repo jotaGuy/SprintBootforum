@@ -7,8 +7,8 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "topic_messages")
-public class Messages {
+@Table(name = "post")
+public class Posts {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,12 +18,12 @@ public class Messages {
     @Column(name = "user_email")
     private String email;
 
+    @Column(name = "title")
+    private String title;
+
     @Column(name = "message")
     private String message;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "topic_id", nullable = false)  // Foreign key referencing Topics
-    private Topics topic;
-
-    // Constructors, getters, and setters can be added as needed
+    @Column(name = "topic")
+    private String topic;
 }

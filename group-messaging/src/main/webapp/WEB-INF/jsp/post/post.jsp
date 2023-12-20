@@ -14,4 +14,15 @@
     </c:forEach>
 </section>
 
+<section class="section">
+    <!-- Create a link to the createMessage page with the current topic -->
+    <c:url var="createMessageUrl" value="/post/createPost">
+        <c:param name="topic" value="${param.topic}" />
+    </c:url>
+
+    <a href="${createMessageUrl}">
+        <button>Hello</button>
+    </a>
+</section>
+
 <jsp:include page="../include/footer.jsp" />

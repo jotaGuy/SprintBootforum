@@ -7,17 +7,17 @@ import org.hibernate.validator.constraints.Length;
 
 @Getter
 @Setter
-public class CreateTopicFormBean {
+public class CreatePostFormBean {
 
     @NotEmpty(message = "Must add a title to post")
     private String authenticatedUserName;
 
-    @NotEmpty(message = "Must add a Topic")
+    @NotEmpty(message = "Description cannot be empty")
     private String topic;
 
-    @Length(min=50, max=500, message = "Description must be at least 100 - 500 characters long")
-    @NotEmpty(message = "Description cannot be empty")
-    private String description;
+    @NotEmpty(message = "Must add a title to post")
+    private String title;
 
-    // Getters and setters
+    @NotEmpty(message = "Description cannot be empty")
+    private String message;
 }

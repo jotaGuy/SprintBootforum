@@ -3,6 +3,8 @@ package com.perscholas.caseStudy.config;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -25,9 +27,14 @@ public class SecurityConfig {
         http.csrf(csrf -> csrf.disable());
 
         // this block of code determines which requests are authenticated
+        // any part of your application that requires you to know who is logged in to take some action
+        // must be listed here and have its own controller to handle those requests
         http.authorizeRequests()
                 .requestMatchers(
+                        // this will make all requests to /customer/** require authentication
+                        // we will now have to authenticate to user our customer search or customer create pages
                         new AntPathRequestMatcher("/admin/**"),
+                        new AntPathRequestMatcher("/topics/createTopic"),
                         new AntPathRequestMatcher("/user/**")).authenticated()
                 .anyRequest().permitAll();
 
@@ -53,6 +60,11 @@ public class SecurityConfig {
     @Bean(name = "passwordEncoder")
     public PasswordEncoder getPasswordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public AuthenticationManager authenticationManager(AuthenticationConfiguration authConfig) throws Exception {
+        return authConfig.getAuthenticationManager();
     }
 
 

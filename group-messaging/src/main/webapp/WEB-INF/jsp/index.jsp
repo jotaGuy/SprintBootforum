@@ -6,16 +6,16 @@
 
 <script>
     function redirectToMessages(topic) {
-        window.location.href = "topicMessages/displayMessages?topic=" + encodeURIComponent(topic);
+        window.location.href = "/post/post?topic=" + encodeURIComponent(topic);
     }
 
     // Function to refresh the page every 3 seconds
-    function refreshPage() {
-        location.reload(); // Pass true to force a full page reload
-    }
-
-    // Set up the interval to call the refreshPage function every 3000 milliseconds (3 seconds)
-    setInterval(refreshPage, 3000);
+    // function refreshPage() {
+    //     location.reload(); // Pass true to force a full page reload
+    // }
+    //
+    // // Set up the interval to call the refreshPage function every 3000 milliseconds (3 seconds)
+    // setInterval(refreshPage, 3000);
 </script>
 
 <section class="section">

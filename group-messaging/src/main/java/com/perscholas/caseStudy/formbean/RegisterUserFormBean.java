@@ -11,6 +11,9 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 public class RegisterUserFormBean {
 
+    @NotEmpty(message = "User Name cannot be empty")
+    private String username;
+
     @Email(message = "Email must be a valid email address")
     private String email;
 

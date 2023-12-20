@@ -1,17 +1,22 @@
 package com.perscholas.caseStudy.controller;
 
-import com.perscholas.caseStudy.enity.Users;
+import com.perscholas.caseStudy.database.entity.User;
+import com.perscholas.caseStudy.security.AuthenticatedUserService;
 import com.perscholas.caseStudy.service.UserService;
+import com.perscholas.caseStudy.formbean.RegisterUserFormBean;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
-import org.eclipse.tags.shaded.org.apache.xpath.operations.Mod;
-import com.perscholas.caseStudy.database.entity.User;
-import com.perscholas.caseStudy.formbean.RegisterUserFormBean;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Slf4j
@@ -21,6 +26,11 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private AuthenticatedUserService authenticatedUserService;
 
     @GetMapping("/auth/login")
     public ModelAndView login() {
@@ -29,8 +39,6 @@ public class AuthController {
         return response;
     }
 
-
-
     @GetMapping("/auth/register")
     public ModelAndView register() {
         ModelAndView response = new ModelAndView();
@@ -38,8 +46,10 @@ public class AuthController {
         return response;
     }
 
-    @GetMapping("/auth/registerSubmit")
-    public ModelAndView registerSubmit(@Valid RegisterUserFormBean form, BindingResult bindingResult) {
+    @PostMapping("/auth/registerSubmit")
+    public ModelAndView registerSubmit(@Valid RegisterUserFormBean form, BindingResult bindingResult, HttpSession session) {
+        log.info("Form Submitted!");
+
         if (bindingResult.hasErrors()) {
             log.info("######################### In register user - has errors #########################");
             ModelAndView response = new ModelAndView("auth/register");
@@ -55,14 +65,29 @@ public class AuthController {
 
         log.info("######################### In register user - no error found #########################");
 
-        Users u = userService.createNewUser(form);
+        // Log the values
+        log.info("Username: " + form.getUsername());
+        log.info("Email: " + form.getEmail());
+        log.info("Password: " + form.getPassword());
 
-        // the view name can either be a jsp file name or a redirect to another controller method
+        User u = userService.createNewUser(form);
+
+        authenticatedUserService.authenticateNewUser(session, u.getEmail(), form.getPassword());
+
+        // Redirect to the home page after successful registration
         ModelAndView response = new ModelAndView();
         response.setViewName("redirect:/");
-
         return response;
     }
 
+    @GetMapping("/auth/logout")
+    public ModelAndView logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+        // Invalidate the current session
+        session.invalidate();
 
+        // Perform any additional logout logic if needed
+
+        ModelAndView modelAndView = new ModelAndView("redirect:/auth/login");
+        return modelAndView;
+    }
 }

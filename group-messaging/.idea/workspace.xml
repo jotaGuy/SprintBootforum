@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="84b78233-3ec2-43ab-9045-4dcf2252e649" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/ClassCaseStudyProject.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/AuthController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/MessagesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/SlashController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/SlashController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/TopicController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/controller/TopicController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/dao/MessagesDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/dao/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/Messages.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/Topics.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/Topics.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/database/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/enity/SignIn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/enity/Signup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/enity/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateMessageFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateMessageFormBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateTopicFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/CreateTopicFormBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/RegisterUserFormBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/formbean/RegisterUserFormBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/service/TopicService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/service/TopicService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/perscholas/caseStudy/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/auth/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/auth/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/auth/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/auth/register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/include/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topicMessages/createMessage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topicMessages/displayMessages.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topics/createTopic.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topics/createTopic.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/topics/search_topics.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pub/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pub/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pub/css/topics-list.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/pub/css/topics-list.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="Kotlin Interface" />
+        <option value="Interface" />
+        <option value="CSS File" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2ZNmHCFb8PuMaxbp2MyClp98V1L" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.GroupMessagingApplication.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/jaybaez/Desktop/ClassCaseStudyProject/group-messaging/pom.xml",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/pub/images" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.GroupMessagingApplication">
+    <configuration name="CaseStudyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="springboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.perscholas.caseStudy.CaseStudyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GroupMessagingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="springboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.perscholas.caseStudy.CaseStudyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-3183f394aec4-5f3ff201" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84b78233-3ec2-43ab-9045-4dcf2252e649" name="Changes" comment="" />
+      <created>1702270821883</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702270821883</updated>
+      <workItem from="1702270822997" duration="16149000" />
+      <workItem from="1702508988674" duration="16676000" />
+      <workItem from="1702531056405" duration="104000" />
+      <workItem from="1702531167388" duration="67000" />
+      <workItem from="1702531240296" duration="19760000" />
+      <workItem from="1702625432366" duration="462000" />
+      <workItem from="1702654383538" duration="11000" />
+      <workItem from="1702654403527" duration="90000" />
+      <workItem from="1702654760035" duration="607000" />
+      <workItem from="1702655777463" duration="884000" />
+      <workItem from="1702879536110" duration="320000" />
+      <workItem from="1702928904705" duration="8194000" />
+      <workItem from="1702942367294" duration="603000" />
+      <workItem from="1702943328765" duration="29000" />
+      <workItem from="1702943511013" duration="21815000" />
+      <workItem from="1703024273309" duration="21583000" />
+      <workItem from="1703047445674" duration="5000" />
+      <workItem from="1703047466615" duration="185000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

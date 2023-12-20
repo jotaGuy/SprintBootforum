@@ -19,7 +19,6 @@ public class SlashController {
 
     @GetMapping("/")
     public ModelAndView index() {
-        System.out.println("Signing");
 
         // Use findAll() to get all topics
         List<Topics> topics = topicsDAO.findAll();

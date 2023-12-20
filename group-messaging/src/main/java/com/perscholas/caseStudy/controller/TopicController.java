@@ -4,17 +4,17 @@ import com.perscholas.caseStudy.database.dao.TopicsDAO;
 import com.perscholas.caseStudy.database.entity.Topics;
 import com.perscholas.caseStudy.formbean.CreateTopicFormBean;
 import com.perscholas.caseStudy.service.TopicService;
-import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
-
+import jakarta.validation.Valid;
 import java.util.List;
 
 @Slf4j
@@ -27,27 +27,42 @@ public class TopicController {
     @Autowired
     private TopicService topicService;
 
-    @GetMapping("/topics/createTopic")
-    public ModelAndView createTopicForm(Model model) {
+    @GetMapping("/topics/topics")
+    public ModelAndView searchTopics(Model model) {
         List<Topics> topics = topicsDAO.findAll();
-        model.addAttribute("topics", topics);
-        model.addAttribute("createTopicFormBean", new CreateTopicFormBean());
-        return new ModelAndView("topics/createTopic");
+
+        ModelAndView response = new ModelAndView("topics/topics");
+        response.addObject("topics", topics); // Update the variable name
+
+        return response;
     }
 
-    @PostMapping("/topics/createTopic")
+    @GetMapping("/topics/createTopic")
+    public ModelAndView topic() {
+        ModelAndView response = new ModelAndView();
+        response.setViewName("topics/createTopic");
+        return  response;
+    }
+
+    @PostMapping("/topics/submitTopic")
     public String createTopicSubmit(
             @ModelAttribute("createTopicFormBean") @Valid CreateTopicFormBean form,
-            BindingResult result,
-            Model model
+            BindingResult result
     ) {
+
+        ModelAndView response = new ModelAndView("topics/createTopic");
+
         if (result.hasErrors()) {
+            for (FieldError error : result.getFieldErrors()) {
+                log.error("Validation error in field '{}': {}", error.getField(), error.getDefaultMessage());
+            }
+            response.addObject("validationErrors", result.getFieldErrors());
             List<Topics> topics = topicsDAO.findAll();
-            model.addAttribute("topics", topics);
+            response.addObject("topics", topics);
             return "topics/createTopic";
         }
 
         topicService.createTopic(form);
-        return "redirect:/";
+        return "redirect:/topics/topics";
     }
 }

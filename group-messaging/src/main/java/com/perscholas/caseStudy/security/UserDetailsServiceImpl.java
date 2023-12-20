@@ -1,6 +1,6 @@
 package com.perscholas.caseStudy.security;
 
-import com.perscholas.caseStudy.enity.Users;
+
 import lombok.extern.slf4j.Slf4j;
 import com.perscholas.caseStudy.database.dao.UserDAO;
 import com.perscholas.caseStudy.database.dao.UserRoleDAO;
@@ -33,10 +33,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         log.debug("User login attempt with username: " + username);
 
         // lookup the incoming username in the database
-        Users users = userDao.findByEmailIgnoreCase(username);
+        User user = userDao.findByEmailIgnoreCase(username);
 
         // if we did not find the user in the database then we throw an exception because the user is not valid
-        if (users == null) {
+        if (user == null) {
             throw new UsernameNotFoundException("Username '" + username + "' not found in database");
         }
 
@@ -45,13 +45,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         boolean credentialsNonExpired = true;
         boolean accountNonLocked = true;
 
-        List<UserRole> userRoles = userRoleDao.findByUserId(Math.toIntExact(users.getId()));
+        List<UserRole> userRoles = userRoleDao.findByUserId(user.getId());
 
         // setup user roles
         Collection<? extends GrantedAuthority> springRoles = buildGrantAuthorities(userRoles);
 
 
-        return new org.springframework.security.core.userdetails.User(users.getEmail(), users.getPassword(), accountIsEnabled,
+        return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), accountIsEnabled,
                 accountNonExpired, credentialsNonExpired, accountNonLocked, springRoles);
     }
 

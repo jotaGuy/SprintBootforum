@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="app">
-    <form class="container" action="/auth/registerSubmit" method="get">
+    <form class="container" action="${pageContext.request.contextPath}/auth/loginSubmit" method="post">
         <div class="header">
             <h3 class="header-text">Sign In</h3>
         </div>
@@ -27,7 +27,7 @@
         />
         <input
                 class="form pwd-input"
-                id="passwrd"
+                id="password"
                 type="password"
                 name="password"
                 placeholder="Password"
@@ -37,9 +37,9 @@
                 class="form button"
                 type="submit"
         >
-            <a id="button-link" href="/about"> Login </a>
+           Login
         </button>
-        <a href="${pageContext.request.contextPath}/">
+        <a href="${pageContext.request.contextPath}/auth/register">
             <div id="signup" class="signup">
                 <div class="signup-fields">Sign Up</div>
             </div>
