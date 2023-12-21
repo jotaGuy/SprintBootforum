@@ -7,19 +7,21 @@
 
         <c:if test="${pageContext.request.userPrincipal ne null}">
             <!-- Include the authenticated user's name as a hidden input field -->
-            <input type="hidden" name="authenticatedUserName" value="${pageContext.request.userPrincipal.name}" />
+            <input type="hidden" name="user" value="${pageContext.request.userPrincipal.name}" />
         </c:if>
         <!-- Ensure 'topic' is passed as a hidden parameter in the URL -->
         <input type="hidden" name="postId" value="${param.postId}" />
-        <label for="comment">Post comment
+        <label for="comment">Enter  comment
             <textarea name="comment" id="comment"></textarea>
         </label>
 
-        <button type="submit">Create Post</button>
+        <button type="submit" onclick="logFormData(event)">Add Comment</button>
     </form>
 
     <script>
-        function logFormData() {
+        function logFormData(event) {
+            // Prevent the default form submissio
+
             // Retrieve form data
             const form = document.getElementById("postForm");
             const formData = new FormData(form);
@@ -29,8 +31,7 @@
                 console.log(key, value);
             });
 
-            // Prevent the default form submission
-            form.onsubmit();
+            // Additional actions you may want to perform after logging the data
         }
     </script>
 </section>

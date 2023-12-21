@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Slf4j
@@ -58,8 +60,12 @@ public class PostController {
         }
 
 
+
+
         postService.createPost(form);
-        response.setViewName("redirect:/post/post");
+
+        String topic = form.getTopic();
+        response.setViewName("redirect:/post/post?topic=" + URLEncoder.encode(topic, StandardCharsets.UTF_8));
 
         return response;
     }

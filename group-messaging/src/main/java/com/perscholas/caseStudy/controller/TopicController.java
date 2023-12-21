@@ -45,7 +45,7 @@ public class TopicController {
     }
 
     @PostMapping("/topics/submitTopic")
-    public String createTopicSubmit(
+    public ModelAndView createTopicSubmit(
             @ModelAttribute("createTopicFormBean") @Valid CreateTopicFormBean form,
             BindingResult result
     ) {
@@ -59,10 +59,12 @@ public class TopicController {
             response.addObject("validationErrors", result.getFieldErrors());
             List<Topics> topics = topicsDAO.findAll();
             response.addObject("topics", topics);
-            return "topics/createTopic";
+            response.setViewName("topics/createTopic");
+            return response;
         }
 
         topicService.createTopic(form);
-        return "redirect:/topics/topics";
+        response.setViewName("redirect:/topics/topics");
+        return response;
     }
 }

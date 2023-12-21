@@ -3,8 +3,13 @@
 <jsp:include page="../include/header.jsp" />
 
 
-<section>
-        Hello
+<section class="section">
+        <c:forEach var="comment" items="${comments}">
+                        <div class="message">
+                                <p class="message-text">${comment.comment}</p>
+                                <p class="user-email">By: ${comment.userEmail}</p>
+                        </div>
+        </c:forEach>
 </section>
 
 <section class="section">

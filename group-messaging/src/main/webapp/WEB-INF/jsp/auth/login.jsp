@@ -14,7 +14,7 @@
 </head>
 <body>
 <div id="app">
-    <form class="container" action="${pageContext.request.contextPath}/auth/loginSubmit" method="post">
+    <form class="container" action="/auth/loginSubmit" method="post">
         <div class="header">
             <h3 class="header-text">Sign In</h3>
         </div>

@@ -10,11 +10,10 @@ import lombok.Setter;
 public class CreateCommentFormBean {
 
     @NotNull(message = "Post ID cannot be null")
-    @NotEmpty(message = "Must add a title of post")
     private Integer postId;
 
     @NotEmpty(message = "Must be authenticated")
-    private String authenticatedUserName;
+    private String user;
 
     @NotEmpty(message = "Comment cannot be empty")
     private String comment;

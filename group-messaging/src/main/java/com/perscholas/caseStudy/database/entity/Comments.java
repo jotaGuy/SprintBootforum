@@ -16,16 +16,13 @@ public class Comments {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "creatorUserName")
-    private String creatorEmail;
-
-    @Column(name = "authenticatedUserName")
+    @Column(name = "user")
     private String userEmail;
 
     @Column(name = "comment")
     private String comment;
 
     // idea of the message the comment is for
-    @Column(name = "messageId")
-    private Integer messageId;
+    @Column(name = "postId", nullable = false)
+    private Integer postId;
 }

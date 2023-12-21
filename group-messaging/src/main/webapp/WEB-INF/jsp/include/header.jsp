@@ -27,7 +27,7 @@
             <ul class="navbar-nav">
                 <sec:authorize access="!isAuthenticated()">
                 <li class="nav-item">
-                    <a class="nav-link" href="/auth/register">Sign Up!</a>
+                    <a class="nav-link" href="/auth/login">Sign In</a>
                 </li>
                 </sec:authorize>
                 <sec:authorize access="hasAnyAuthority('ADMIN')">
@@ -39,13 +39,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/topics/topics">Search Topics</a>
                     </li>
-                </sec:authorize>
-                <sec:authorize access="isAuthenticated()">
                     <li class="nav-item">
-                        <a class="nav-link" href="/auth/logout">Logout</a>
+                        <a class="nav-link" href="/profile/profile">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href=""><sec:authentication property="principal.username" /></a>
+                        <a class="nav-link" href="/auth/logout">Logout</a>
                     </li>
                 </sec:authorize>
             </ul>

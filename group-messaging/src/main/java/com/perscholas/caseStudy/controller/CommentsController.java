@@ -6,6 +6,7 @@ import com.perscholas.caseStudy.database.entity.Comments;
 import com.perscholas.caseStudy.database.entity.Posts;
 import com.perscholas.caseStudy.formbean.CreateCommentFormBean;
 import com.perscholas.caseStudy.formbean.CreatePostFormBean;
+import com.perscholas.caseStudy.service.CommentService;
 import com.perscholas.caseStudy.service.PostService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
@@ -29,14 +30,14 @@ public class CommentsController {
     private CommentDAO commentDAO;
 
     @Autowired
-    private PostService postService;
+    private CommentService commentService;
     @GetMapping("/comments/comments")
     public ModelAndView displayMessages(@RequestParam(required = true) Integer postId) {
         ModelAndView response = new ModelAndView("comments/comments");
 
-        List<Comments> messages = commentDAO.findByPostId(postId);
+        List<Comments> comments = commentDAO.findByPostId(postId);
 
-        response.addObject("messages", messages);
+        response.addObject("comments", comments);
         return response;
     }
 
@@ -47,7 +48,7 @@ public class CommentsController {
     }
 
     @PostMapping("/comments/submitComment")
-    public ModelAndView submitComment(@ModelAttribute("createPostFormBean") @Valid CreateCommentFormBean form, BindingResult result) {
+    public ModelAndView submitComment(@RequestParam(required = true) Integer postId, @ModelAttribute("createCommentFormBean") @Valid CreateCommentFormBean form, BindingResult result) {
         ModelAndView response = new ModelAndView("comments/addComment");
 
         if (result.hasErrors()) {
@@ -58,7 +59,10 @@ public class CommentsController {
             return response;
         }
 
-        response.setViewName("redirect:/post/post");
+
+        commentService.createComment(form);
+
+        response.setViewName("redirect:/post/post?topic=Money");
         return response;
     }
 
