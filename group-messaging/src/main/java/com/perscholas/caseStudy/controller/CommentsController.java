@@ -2,8 +2,10 @@ package com.perscholas.caseStudy.controller;
 
 import com.perscholas.caseStudy.database.dao.CommentDAO;
 import com.perscholas.caseStudy.database.dao.PostDAO;
+import com.perscholas.caseStudy.database.dao.UserDAO;
 import com.perscholas.caseStudy.database.entity.Comments;
 import com.perscholas.caseStudy.database.entity.Posts;
+import com.perscholas.caseStudy.database.entity.User;
 import com.perscholas.caseStudy.formbean.CreateCommentFormBean;
 import com.perscholas.caseStudy.formbean.CreatePostFormBean;
 import com.perscholas.caseStudy.service.CommentService;
@@ -11,6 +13,8 @@ import com.perscholas.caseStudy.service.PostService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -30,15 +34,32 @@ public class CommentsController {
     private CommentDAO commentDAO;
 
     @Autowired
+    private UserDAO userDAO;
+
+    @Autowired
     private CommentService commentService;
     @GetMapping("/comments/comments")
     public ModelAndView displayMessages(@RequestParam(required = true) Integer postId) {
         ModelAndView response = new ModelAndView("comments/comments");
 
         List<Comments> comments = commentDAO.findByPostId(postId);
+        User user = userDAO.findByEmailIgnoreCase(getCurrentUsername());
 
         response.addObject("comments", comments);
+        response.addObject("user", user);
+
         return response;
+    }
+
+    public String getCurrentUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication != null && authentication.isAuthenticated()) {
+            return authentication.getName();
+        } else {
+            // Handle the case where there is no authenticated user
+            return null;
+        }
     }
 
     @GetMapping("/comments/addComment")

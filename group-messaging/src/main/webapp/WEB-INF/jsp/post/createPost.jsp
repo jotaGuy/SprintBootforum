@@ -8,7 +8,7 @@
 
         <c:if test="${pageContext.request.userPrincipal ne null}">
             <!-- Include the authenticated user's name as a hidden input field -->
-            <input type="hidden" name="authenticatedUserName" value="${pageContext.request.userPrincipal.name}" />
+            <input type="hidden" name="user" value="${pageContext.request.userPrincipal.name}" />
         </c:if>
         <!-- Ensure 'topic' is passed as a hidden parameter in the URL -->
         <input type="hidden" name="topic" value="${param.topic}" />

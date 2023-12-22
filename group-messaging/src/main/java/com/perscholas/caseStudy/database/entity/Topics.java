@@ -15,8 +15,9 @@ public class Topics {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "user")
-    private String user;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false, referencedColumnName = "id")
+    private User userId;
 
     @Column(name = "topic")
     private String topic;
@@ -24,5 +25,4 @@ public class Topics {
     @Column(name = "description")
     private String description;
 
-    // Constructors, getters, and setters can be added as needed
 }

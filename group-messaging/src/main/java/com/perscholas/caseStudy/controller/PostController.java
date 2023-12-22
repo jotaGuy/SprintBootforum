@@ -1,12 +1,16 @@
 package com.perscholas.caseStudy.controller;
 
 import com.perscholas.caseStudy.database.dao.PostDAO;
+import com.perscholas.caseStudy.database.dao.UserDAO;
 import com.perscholas.caseStudy.database.entity.Posts;
+import com.perscholas.caseStudy.database.entity.User;
 import com.perscholas.caseStudy.formbean.CreatePostFormBean;
 import com.perscholas.caseStudy.service.PostService;
 import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -24,8 +28,13 @@ import java.util.List;
 @Controller
 public class PostController {
 
+    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
     @Autowired
     private PostDAO postDAO;
+
+    @Autowired
+    private UserDAO userDAO;
 
     @Autowired
     private PostService postService;
@@ -37,8 +46,22 @@ public class PostController {
 
         List<Posts> posts = postDAO.findByTopic(topic);
 
+        User user = userDAO.findByEmailIgnoreCase(getCurrentUsername());
+
         response.addObject("posts", posts);
+        response.addObject("user", user);
         return response;
+    }
+
+    public String getCurrentUsername() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if (authentication != null && authentication.isAuthenticated()) {
+            return authentication.getName();
+        } else {
+            // Handle the case where there is no authenticated user
+            return null;
+        }
     }
 
     @GetMapping("/post/createPost")

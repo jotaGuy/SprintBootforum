@@ -1,5 +1,6 @@
 package com.perscholas.caseStudy.formbean;
 
+import com.perscholas.caseStudy.database.entity.User;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +11,7 @@ import org.hibernate.validator.constraints.Length;
 public class CreatePostFormBean {
 
     @NotEmpty(message = "Must be authenticated")
-    private String authenticatedUserName;
+    private String user;
 
     @NotEmpty(message = "Description cannot be empty")
     private String topic;

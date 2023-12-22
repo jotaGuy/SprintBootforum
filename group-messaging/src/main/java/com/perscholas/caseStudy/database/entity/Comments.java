@@ -16,8 +16,9 @@ public class Comments {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "user")
-    private String userEmail;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false, referencedColumnName = "id")
+    private User userId;
 
     @Column(name = "comment")
     private String comment;

@@ -10,7 +10,7 @@
     <div class="card" id="topicList" onclick="redirectToMessages('${post.id}')">
         <div class="message">
             <p class="message-text">${post.message}</p>
-            <p class="user-email">By: ${post.email}</p>
+            <p class="message-text">${user.username}</p>
         </div>
     </div>
     </c:forEach>

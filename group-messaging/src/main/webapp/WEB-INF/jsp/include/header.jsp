@@ -37,15 +37,15 @@
                 </sec:authorize>
                 <sec:authorize access="isAuthenticated()">
                     <li class="nav-item">
-                        <a class="nav-link" href="/topics/topics">Search Topics</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="/profile/profile">Profile</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/auth/logout">Logout</a>
                     </li>
                 </sec:authorize>
+                <li class="nav-item">
+                    <a class="nav-link" href="/topics/topics">Search Topics</a>
+                </li>
             </ul>
         </div>
     </div>

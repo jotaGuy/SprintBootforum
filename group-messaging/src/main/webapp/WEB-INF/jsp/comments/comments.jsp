@@ -7,7 +7,7 @@
         <c:forEach var="comment" items="${comments}">
                         <div class="message">
                                 <p class="message-text">${comment.comment}</p>
-                                <p class="user-email">By: ${comment.userEmail}</p>
+                                <p class="message-text">${user.username}</p>
                         </div>
         </c:forEach>
 </section>

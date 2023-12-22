@@ -25,7 +25,7 @@
                 <form action="${pageContext.request.contextPath}/topics/submitTopic" method="post">
                     <c:if test="${pageContext.request.userPrincipal ne null}">
                         <!-- Include the authenticated user's name as a hidden input field -->
-                        <input type="hidden" name="authenticatedUserName" value="${pageContext.request.userPrincipal.name}" />
+                        <input type="hidden" name="user" value="${pageContext.request.userPrincipal.name}" />
                     </c:if>
                     <div class="form-group">
                         <label for="topic">Topic:</label>

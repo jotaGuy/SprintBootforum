@@ -15,8 +15,9 @@ public class Posts {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "user_email")
-    private String email;
+    @ManyToOne
+    @JoinColumn(name = "user_id", nullable = false, referencedColumnName = "id")
+    private User userId;
 
     @Column(name = "title")
     private String title;

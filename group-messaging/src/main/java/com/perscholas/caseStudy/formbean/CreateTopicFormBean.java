@@ -10,7 +10,7 @@ import org.hibernate.validator.constraints.Length;
 public class CreateTopicFormBean {
 
     @NotEmpty(message = "Must add a title to post")
-    private String authenticatedUserName;
+    private String user;
 
     @NotEmpty(message = "Must add a Topic")
     private String topic;
@@ -19,5 +19,4 @@ public class CreateTopicFormBean {
     @NotEmpty(message = "Description cannot be empty")
     private String description;
 
-    // Getters and setters
 }

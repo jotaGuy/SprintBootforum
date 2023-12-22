@@ -57,8 +57,6 @@ public class TopicController {
                 log.error("Validation error in field '{}': {}", error.getField(), error.getDefaultMessage());
             }
             response.addObject("validationErrors", result.getFieldErrors());
-            List<Topics> topics = topicsDAO.findAll();
-            response.addObject("topics", topics);
             response.setViewName("topics/createTopic");
             return response;
         }
