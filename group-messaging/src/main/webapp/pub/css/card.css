@@ -1,0 +1,44 @@
+.section {
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+    width: 400px;
+    margin-top: 100px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 20px 50px #000;
+    background-color: white;
+}
+
+#id {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.btn {
+    font-weight: bold;
+    box-shadow: 0 4px 8px #333;
+    background-color: #FF8800;
+    color: #fff;
+    align-self: center;
+}
+
+.create-button {
+    margin-top: 25px;
+    text-align: center;
+}

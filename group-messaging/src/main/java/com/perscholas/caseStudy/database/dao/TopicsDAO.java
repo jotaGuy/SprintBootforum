@@ -9,5 +9,6 @@ public interface TopicsDAO extends JpaRepository<Topics, Long> {
 
     // You don't need a custom query to get all topics
     List<Topics> findAll();
+    Topics findByTopic(String topic);
 }
 

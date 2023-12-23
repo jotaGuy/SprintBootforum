@@ -5,10 +5,9 @@
 
 <section class="section">
         <c:forEach var="comment" items="${comments}">
-                        <div class="message">
-                                <p class="message-text">${comment.comment}</p>
-                                <p class="message-text">${user.username}</p>
-                        </div>
+                <div class="message">
+                        <p class="message-text">${comment.comment}</p>
+                </div>
         </c:forEach>
 </section>
 

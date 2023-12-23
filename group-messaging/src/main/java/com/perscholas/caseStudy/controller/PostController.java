@@ -1,8 +1,10 @@
 package com.perscholas.caseStudy.controller;
 
 import com.perscholas.caseStudy.database.dao.PostDAO;
+import com.perscholas.caseStudy.database.dao.TopicsDAO;
 import com.perscholas.caseStudy.database.dao.UserDAO;
 import com.perscholas.caseStudy.database.entity.Posts;
+import com.perscholas.caseStudy.database.entity.Topics;
 import com.perscholas.caseStudy.database.entity.User;
 import com.perscholas.caseStudy.formbean.CreatePostFormBean;
 import com.perscholas.caseStudy.service.PostService;
@@ -22,6 +24,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -39,6 +42,9 @@ public class PostController {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private TopicsDAO topicsDAO;
+
     @GetMapping("/post/post")
     public ModelAndView displayMessages(@RequestParam(required = true) String topic) {
 
@@ -46,22 +52,26 @@ public class PostController {
 
         List<Posts> posts = postDAO.findByTopic(topic);
 
-        User user = userDAO.findByEmailIgnoreCase(getCurrentUsername());
+        Topics topics = topicsDAO.findByTopic(topic);
+
+        List<String> usernames = new ArrayList<>();
+
+        for (Posts post : posts) {
+            User userId = post.getUserId();
+            User user = userDAO.findById(userId.getId());
+            if (user != null) {
+                usernames.add(user.getUsername());
+            } else {
+                // Handle the case where user is not found for the given user_id
+                usernames.add("Unknown User");
+            }
+        }
 
         response.addObject("posts", posts);
-        response.addObject("user", user);
+        response.addObject("usernames", usernames);
+        log.info("usernames" + usernames);
+        response.addObject("topics", topics);
         return response;
-    }
-
-    public String getCurrentUsername() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-
-        if (authentication != null && authentication.isAuthenticated()) {
-            return authentication.getName();
-        } else {
-            // Handle the case where there is no authenticated user
-            return null;
-        }
     }
 
     @GetMapping("/post/createPost")

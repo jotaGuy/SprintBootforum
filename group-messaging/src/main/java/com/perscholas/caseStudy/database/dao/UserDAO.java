@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserDAO extends JpaRepository<User, Long> {
     User findByEmailIgnoreCase(String email);
-    User findByUsernameIgnoreCase(String username); // Add this method
+    User findByUsernameIgnoreCase(String username);
+    User findById(Integer userId);
 }

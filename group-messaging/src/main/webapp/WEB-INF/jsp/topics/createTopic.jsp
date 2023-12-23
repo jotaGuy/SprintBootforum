@@ -2,8 +2,8 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="../include/header.jsp" />
 
-<link rel="stylesheet" type="text/css" href="../../pub/css/topics-list.css">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="../../../pub/css/card.css">
+
 
 <section class="section">
     <div class="container" style="height: 600px;">
@@ -36,7 +36,9 @@
                         <textarea class="form-control" id="description" name="description" required oninput="updateCharacterCount(this)"></textarea>
                         <small id="characterCount" class="form-text text-muted"></small>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create Topic</button>
+                    <div class="btn-container">
+                        <button class="btn create-button" type="submit">Create Topic</button>
+                    </div>
                 </form>
             </div>
         </div>

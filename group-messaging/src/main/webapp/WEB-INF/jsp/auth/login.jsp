@@ -23,7 +23,7 @@
                 id="username"
                 type="text"
                 name="username"
-                placeholder="User Name"
+                placeholder="Enter Email"
         />
         <input
                 class="form pwd-input"

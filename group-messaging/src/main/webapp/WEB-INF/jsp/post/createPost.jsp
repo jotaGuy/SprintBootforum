@@ -1,7 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../include/header.jsp" />
 
-<link rel="stylesheet" href="../../../pub/css/messages.css">
+<link rel="stylesheet" href="../../../pub/css/card.css">
 
 <section class="section">
     <form id="postForm" action="${pageContext.request.contextPath}/post/submitPost" method="post">
@@ -15,28 +15,29 @@
         <label for="title">Post Title
             <input type="text" name="title" id="title" />
         </label>
-        <label for="message">Message
-            <textarea type="text" name="message" id="message"></textarea>
+        <label for="message">Description
+            <textarea name="message" id="message" ></textarea>
         </label>
-
-        <button type="submit">Create Post</button>
+    <div class="btn-container">
+        <button class="btn create-button" type="submit">Create Post</button>
+    </div>
     </form>
-
-    <script>
-        function logFormData() {
-            // Retrieve form data
-            const form = document.getElementById("postForm");
-            const formData = new FormData(form);
-
-            // Log form data
-            formData.forEach(function(value, key){
-                console.log(key, value);
-            });
-
-            // Prevent the default form submission
-            form.onsubmit();
-        }
-    </script>
 </section>
+
+<script>
+    function logFormData() {
+        // Retrieve form data
+        const form = document.getElementById("postForm");
+        const formData = new FormData(form);
+
+        // Log form data
+        formData.forEach(function(value, key){
+            console.log(key, value);
+        });
+
+        // Prevent the default form submission
+        form.onsubmit();
+    }
+</script>
 
 <jsp:include page="../include/footer.jsp" />

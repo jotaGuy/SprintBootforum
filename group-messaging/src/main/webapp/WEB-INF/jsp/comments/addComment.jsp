@@ -2,7 +2,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="../include/header.jsp" />
 
-<section>
+<link rel="stylesheet" href="../../../pub/css/card.css">
+
+<section class="section">
     <form id="postForm" action="${pageContext.request.contextPath}/comments/submitComment" method="post">
 
         <c:if test="${pageContext.request.userPrincipal ne null}">
@@ -15,7 +17,9 @@
             <textarea name="comment" id="comment"></textarea>
         </label>
 
-        <button type="submit" onclick="logFormData(event)">Add Comment</button>
+        <div class="btn-container">
+            <button class="btn create-button" type="submit">Add Comment</button>
+        </div>
     </form>
 
     <script>
