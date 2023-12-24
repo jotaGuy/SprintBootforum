@@ -1,5 +1,7 @@
 package com.perscholas.caseStudy.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,6 +29,7 @@ public class User {
     private String password;
 
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Topics> topicsList;
 
 

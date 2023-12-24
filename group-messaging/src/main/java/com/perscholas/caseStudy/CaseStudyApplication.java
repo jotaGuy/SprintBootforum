@@ -2,8 +2,10 @@ package com.perscholas.caseStudy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {"com.perscholas.caseStudy", "com.perscholas.caseStudy.config"})
 public class CaseStudyApplication {
 
 	public static void main(String[] args) {

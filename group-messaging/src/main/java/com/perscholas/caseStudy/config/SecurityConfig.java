@@ -35,8 +35,7 @@ public class SecurityConfig {
                         // we will now have to authenticate to user our customer search or customer create pages
                         new AntPathRequestMatcher("/admin/**"),
                         new AntPathRequestMatcher("/topics/createTopic"),
-                        new AntPathRequestMatcher("/post/createPost"),
-                        new AntPathRequestMatcher("/comments/addComment")).authenticated()
+                        new AntPathRequestMatcher("/post/createPost")).authenticated()
                 .anyRequest().permitAll();
 
         // this is telling us the URL for the login page and the URL to submit the login form

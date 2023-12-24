@@ -1,5 +1,6 @@
 package com.perscholas.caseStudy.database.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +18,7 @@ public class Topics {
 
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false, referencedColumnName = "id")
+    @JsonBackReference
     private User userId;
 
     @Column(name = "topic")

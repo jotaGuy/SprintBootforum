@@ -86,9 +86,10 @@ input:focus {
     border-radius: 20px;
     background-color: hsl(240, 9%, 25%);
     height: 225px;
-    width: 250px;
+    width: 277px;
     padding: 15px 25px 0 25px;
     overflow-y: auto; /* Add overflow-y property for individual cards */
+    border: 1px solid hsl(240, 9%, 25%);
 }
 
 .card:hover {

@@ -1,0 +1,61 @@
+.section {
+    margin: 10px;
+    padding-left: 20px;
+    border: 1px solid #333333;
+    border-radius: 10px;
+    max-height: 65vh; /* Set the maximum height */
+    overflow-y: auto; /* Add a vertical scrollbar if needed */
+}
+
+.message {
+    display: flex;
+}
+
+p {
+    border-radius: 10px;
+    background-color: hsl(240, 9%, 25%);
+    padding: 10px;
+}
+
+.bottom-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+#comment-input {
+    width: 85vw;
+    height: 45px;
+    background-color: hsl(240, 9%, 25%);
+    border: 1px solid hsl(240, 9%, 25%);
+    padding: 10px;
+    color: whitesmoke;
+    font-size: 20px;
+    z-index: 9999;
+    box-shadow: 5px 10px 60px #656669;
+    border-radius: 10px;
+}
+
+.btn {
+    align-self: center;
+    color: whitesmoke;
+    font-size: 22px;
+    background-color: #FF8800;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    height: 60px;
+    display: flex;
+    margin-bottom: 10px;
+    border: 1px solid  #FF8800;
+}
+
+.btn:hover {
+    color: #333;
+    font-size: 22px;
+}
+
+a {
+    text-decoration: none;
+}
