@@ -1,0 +1,17 @@
+section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px whitesmoke;
+}
+
+h2 {
+    color: whitesmoke;
+}
+
+p {
+    margin: 10px 0;
+    color: whitesmoke;
+}
+
+/* Add more styles as needed */

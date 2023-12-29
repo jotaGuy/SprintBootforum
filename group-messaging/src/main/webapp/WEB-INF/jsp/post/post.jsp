@@ -10,12 +10,12 @@
         <c:url var="createMessageUrl" value="/post/createPost">
             <c:param name="topic" value="${param.topic}" />
         </c:url>
-        <div class="btn-container">
+        <div class="btn-container" style="cursor:pointer">
             <a href="${createMessageUrl}" class="btn create-button">Add a Post</a>
         </div>
     </div>
     <c:forEach var="post" items="${posts}" varStatus="loopStatus">
-        <div class="card" id="topicList" onclick="redirectToMessages('${post.id}', ${loopStatus.index})">
+        <div class="card" id="topicList" onclick="redirectToMessages('${post.id}', ${loopStatus.index})" style="cursor:pointer;">
             <div class="message">
                 <h4>${post.title}</h4>
                 <p class="message-text">${post.message}</p>

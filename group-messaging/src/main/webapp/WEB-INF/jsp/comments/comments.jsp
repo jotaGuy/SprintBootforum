@@ -5,15 +5,22 @@
 <link rel="stylesheet" href="../../../pub/css/comments-page.css">
 
 <section class="section">
-        <c:forEach var="comment" items="${comments}">
-                <div class="message">
-                        <p class="message-text">${comment.comment}
-                                <br>
-                                <br>
-                                By: Jotab
-                        </p>
-                </div>
-        </c:forEach>
+        <c:choose>
+                <c:when test="${not empty comments}">
+                        <c:forEach var="comment" items="${comments}">
+                                <div class="message">
+                                        <p class="message-text">${comment.comment}
+                                                <br>
+                                                <br>
+                                                By: Jotab
+                                        </p>
+                                </div>
+                        </c:forEach>
+                </c:when>
+                <c:otherwise>
+                        <p style="font-size: 25px;">Start the conversation by adding the first comment!</p>
+                </c:otherwise>
+        </c:choose>
 </section>
 
 <!-- Display validation errors if there are any -->
@@ -30,7 +37,7 @@
 
 <section class="bottom-section">
         <div class="comment-container">
-                <form action="${pageContext.request.contextPath}/comments/submitComment" method="post" style="display: flex; flex-direction: row">
+                <form action="${pageContext.request.contextPath}/comments/submitComment" method="post">
                         <c:if test="${pageContext.request.userPrincipal ne null}">
                                 <!-- Include the authenticated user's name as a hidden input field -->
                                 <input type="hidden" name="user" value="${pageContext.request.userPrincipal.name}" />
@@ -40,7 +47,7 @@
                         <label for="comment-input">
                                 <input name="comment" type="text" id="comment-input" placeholder="Enter your opinion..." oninput="filterList()">
                         </label>
-                        <button type="submit" class="btn create-button">Add Comment</button>
+                        <button type="submit" class="btn">Send</button>
                 </form>
         </div>
 </section>
@@ -54,11 +61,11 @@
         let reloadInterval;
 
         // Function to start the interval
-        function startReloadInterval() {
-                reloadInterval = setInterval(function () {
-                        location.reload();
-                }, 3000);
-        }
+        // function startReloadInterval() {
+        //         reloadInterval = setInterval(function () {
+        //                 location.reload();
+        //         }, 3000);
+        // }
 
         // Function to stop the interval
         function stopReloadInterval() {
@@ -71,10 +78,10 @@
                 stopReloadInterval();
         });
 
-        document.getElementById('comment-input').addEventListener('blur', function () {
-                // Input is not in focus, start the interval
-                startReloadInterval();
-        });
+        // document.getElementById('comment-input').addEventListener('blur', function () {
+        //         // Input is not in focus, start the interval
+        //         startReloadInterval();
+        // });
 
         // Start the interval initially
         startReloadInterval();

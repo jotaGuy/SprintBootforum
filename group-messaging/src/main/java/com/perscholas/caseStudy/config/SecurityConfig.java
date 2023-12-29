@@ -43,7 +43,10 @@ public class SecurityConfig {
                 // this is the URL for the login page
                 .loginPage("/auth/login")
                 // this is the URL to submit the login form
-                .loginProcessingUrl("/auth/loginSubmit").permitAll());
+                .loginProcessingUrl("/auth/loginSubmit")
+                .permitAll()
+                .failureUrl("/auth/login?error=true")); // Redirect to the login page with an error parameter
+
 
         // this is telling spring security to logout when we hit the /login/logout URL
         http.logout(formLogout -> formLogout

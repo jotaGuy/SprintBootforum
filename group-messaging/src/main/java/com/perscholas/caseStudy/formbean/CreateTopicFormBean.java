@@ -15,7 +15,7 @@ public class CreateTopicFormBean {
     @NotEmpty(message = "Must add a Topic")
     private String topic;
 
-    @Length(min=50, max=500, message = "Description must be at least 100 - 500 characters long")
+    @Length(min=50, message = "Description must be at least 50 characters")
     @NotEmpty(message = "Description cannot be empty")
     private String description;
 

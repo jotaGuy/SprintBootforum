@@ -18,7 +18,7 @@
         </label>
 
         <div class="btn-container">
-            <button class="btn create-button" type="submit">Add Comment</button>
+            <button class="btn create-button" type="submit">Add</button>
         </div>
     </form>
 

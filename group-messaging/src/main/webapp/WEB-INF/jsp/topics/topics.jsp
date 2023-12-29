@@ -7,25 +7,22 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
-
-
 <script>
     function redirectToMessages(topic) {
         window.location.href = "/post/post?topic=" + encodeURIComponent(topic);
     }
 </script>
 
-
 <section class="section">
     <div class="top-container">
-        <h1 class="title" style="font-size: 50px; font-weight: lighter;">Topics List</h1>
-        <h3 style="font-size: 25px; font-weight: lighter;">Search through all our topics and join the conversations!</h3>
-    </div>
-    <div class="search-container">
-        <input type="text" id="searchBar" placeholder="Search..." oninput="filterList()">
+        <h1 class="topic-title" style="font-size: 35px">Topics List</h1>
+        <span style="margin-top: -10px; margin-bottom: 20px">Search through all our topics and join the conversations!</span>
         <div class="btn-container">
             <a href="${pageContext.request.contextPath}/topics/createTopic" class="btn create-button">Add Topic</a>
         </div>
+    </div>
+    <div class="search-container">
+        <input type="text" id="searchBar" placeholder="Search..." oninput="filterList()">
     </div>
     <div class="topics-list" id="topicList">
         <c:forEach var="topic" items="${topics}">

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bootstrap demo</title>
 
-    <link href="/pub/css/global-style.css" rel="stylesheet">
-    <link href="/pub/css/navbar.css" rel="stylesheet">
-    <link href="/pub/css/footer.css" rel="stylesheet">
+    <link href="../../../pub/css/global-style.css" rel="stylesheet">
+    <link href="../../../pub/css/navbar.css" rel="stylesheet">
+    <link href="../../../pub/css/footer.css" rel="stylesheet">
 
 </head>
 <body>

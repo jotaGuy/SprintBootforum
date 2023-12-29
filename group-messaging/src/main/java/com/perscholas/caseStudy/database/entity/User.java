@@ -31,6 +31,4 @@ public class User {
     @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
     @JsonManagedReference
     private List<Topics> topicsList;
-
-
 }

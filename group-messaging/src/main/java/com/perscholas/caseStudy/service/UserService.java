@@ -47,4 +47,9 @@ public class UserService {
 
         return false; // User does not exist
     }
+
+    public boolean userExists(String email) {
+        // Check if a user with the given username or email already exists
+        return userDao.existsByEmailIgnoreCase(email);
+    }
 }

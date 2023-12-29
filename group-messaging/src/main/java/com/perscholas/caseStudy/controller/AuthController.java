@@ -33,11 +33,22 @@ public class AuthController {
     private AuthenticatedUserService authenticatedUserService;
 
     @GetMapping("/auth/login")
-    public ModelAndView login() {
-        ModelAndView response = new ModelAndView();
-        response.setViewName("auth/login");
+    public ModelAndView login(@RequestParam(name = "error", required = false) String error) {
+        ModelAndView response = new ModelAndView("auth/login");
+
+        log.info("trying to log in");
+
+        // Check if there is an error attribute and add it to the model
+        if (error != null && !error.isEmpty()) {
+            log.info("Error: " + error);
+            response.addObject("error", "Invalid username or password");
+        }
+
+        log.info("No Error");
+
         return response;
     }
+
 
     @GetMapping("/auth/register")
     public ModelAndView register() {
@@ -50,10 +61,10 @@ public class AuthController {
     public ModelAndView registerSubmit(@Valid RegisterUserFormBean form, BindingResult bindingResult, HttpSession session) {
         log.info("Form Submitted!");
 
+        ModelAndView response = new ModelAndView("auth/register");
+
         if (bindingResult.hasErrors()) {
             log.info("######################### In register user - has errors #########################");
-            ModelAndView response = new ModelAndView("auth/register");
-
             for (ObjectError error : bindingResult.getAllErrors()) {
                 log.info("error: " + error.getDefaultMessage());
             }
@@ -65,6 +76,14 @@ public class AuthController {
 
         log.info("######################### In register user - no error found #########################");
 
+        // Check if the user already exists
+        if (userService.userExists(form.getEmail())) {
+            log.info("User already exists!");
+            response.addObject("form", form);
+            response.addObject("userExistsError", "User with the provided username or email already exists.");
+            return response;
+        }
+
         // Log the values
         log.info("Username: " + form.getUsername());
         log.info("Email: " + form.getEmail());
@@ -75,10 +94,11 @@ public class AuthController {
         authenticatedUserService.authenticateNewUser(session, u.getEmail(), form.getPassword());
 
         // Redirect to the home page after successful registration
-        ModelAndView response = new ModelAndView();
         response.setViewName("redirect:/");
         return response;
     }
+
+
 
     @GetMapping("/auth/logout")
     public ModelAndView logout(HttpServletRequest request, HttpServletResponse response, HttpSession session) {

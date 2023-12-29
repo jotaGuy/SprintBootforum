@@ -1,3 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,14 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <link href="../../../pub/css/login.css" rel="stylesheet">
-    <style>
-        .header-tex {
-
-        }
-        .username-input {
-            margin-top: -40px;
-        }
-    </style>
 </head>
 <body>
 <div id="app">
@@ -20,6 +15,24 @@
         <div class="header">
             <h3 class="header-text">Sign Up</h3>
         </div>
+
+        <!-- Display error message if it exists -->
+        <c:if test="${fn:length(errors.allErrors) > 0 or fn:length(userExistsError) > 0}">
+            <div class="error-message" style="color: red; margin: 10px 0 0 10px;">
+                Error(s) occurred:
+                <ul>
+                    <c:forEach var="error" items="${errors.allErrors}">
+                        <c:if test="${fn:length(error.defaultMessage.trim()) > 0}">
+                            <li style="color: black;">${error.defaultMessage}</li>
+                        </c:if>
+                    </c:forEach>
+                    <c:if test="${fn:length(userExistsError.trim()) > 0}">
+                        <li style="color: black;">${userExistsError}</li>
+                    </c:if>
+                </ul>
+            </div>
+        </c:if>
+
         <input
                 class="form username-input"
                 id="username"

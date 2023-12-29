@@ -31,5 +31,22 @@ public class ErrorController {
         return response;
     }
 
+    @RequestMapping(value = "/error/500")
+    public String error500(HttpServletRequest request) {
+        // This is used in the security config for 404 pages
+        log.info("endpoint:/error/500 - Requested URL not found : " + request.getRequestURL());
+
+        return "error/500";
+    }
+
+    @ExceptionHandler({Exception.class, RuntimeException.class})
+    public ModelAndView handleException(HttpServletRequest request, Exception ex) {
+        ModelAndView response = new ModelAndView("error/500");
+
+        log.error("Internal Server Error - URL: " + request.getRequestURL(), ex);
+
+        return response;
+    }
+
 
 }

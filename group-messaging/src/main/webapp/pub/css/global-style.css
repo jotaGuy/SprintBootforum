@@ -2,9 +2,9 @@ body {
     background-color: hsl(240 3.7% 15.9%);
     color: #E0DEDE;
     font-family: "Gill Sans", sans-serif;
-    padding: 20px;
+    padding: 40px;
 }
 
 .footer-bg-color {
-    background-color:#a4a7ab;
+    background-color: whitesmoke;
 }

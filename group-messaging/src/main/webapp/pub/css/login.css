@@ -21,9 +21,7 @@ body {
     background-color: white;
 }
 .header {
-    display: flex;
     justify-content: center;
-    padding: 20px;
     color: #FF8800;
 }
 .header-text {

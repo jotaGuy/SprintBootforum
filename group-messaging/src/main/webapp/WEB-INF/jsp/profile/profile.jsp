@@ -2,6 +2,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:include page="../include/header.jsp" />
 
+<link rel="stylesheet" type="text/css" href="../../../pub/css/profile.css">
+
+
 <section>
     <h2>User Profile</h2>
 
