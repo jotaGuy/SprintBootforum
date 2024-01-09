@@ -30,6 +30,7 @@ The Forum application allows users to engage in discussions on various topics. I
 - JVM
 - SPRINGBOOT
 - BOOTSTRAP
+- MySQL
 
 ## Getting Started
 
