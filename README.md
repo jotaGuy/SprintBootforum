@@ -19,7 +19,7 @@ The Forum application allows users to engage in discussions on various topics. I
   The Comments Page provides users with a platform to engage in discussions within a post. The design mimics a group chat, creating an immersive conversation experience.
 
 ## Creator
-Jancy Baez
+[Jancy Baez](https://github.com/jotaGuy/)
 
 ## Tools
 - JAVA
