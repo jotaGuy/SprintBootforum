@@ -18,6 +18,9 @@ The Forum application allows users to engage in discussions on various topics. I
  <img width="1431" alt="Screenshot 2024-01-09 at 11 54 06 AM" src="https://github.com/jotaGuy/SprintBootforum/assets/145146312/b466b9c0-e8d8-4710-9bf2-be67891a3f62">
   The Comments Page provides users with a platform to engage in discussions within a post. The design mimics a group chat, creating an immersive conversation experience.
 
+## Creator
+Jancy Baez
+
 ## Getting Started
 
 Follow these steps to set up and run the Forum application locally:
