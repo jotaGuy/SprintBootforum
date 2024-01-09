@@ -24,5 +24,5 @@ Follow these steps to set up and run the Forum application locally:
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
+   git clone <https://github.com/jotaGuy/SprintBootforum.git>
    cd forum-application
