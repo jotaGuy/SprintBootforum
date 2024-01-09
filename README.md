@@ -21,6 +21,16 @@ The Forum application allows users to engage in discussions on various topics. I
 ## Creator
 Jancy Baez
 
+## Tools
+- JAVA
+- JAVASCRIPT
+- HTML
+- CSS
+- MAVEN
+- JVM
+- SPRINGBOOT
+- BOOTSTRAP
+
 ## Getting Started
 
 Follow these steps to set up and run the Forum application locally:
