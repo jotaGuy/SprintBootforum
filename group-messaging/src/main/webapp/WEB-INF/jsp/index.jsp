@@ -6,16 +6,6 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-
-
-
-<script>
-    function redirectToMessages(topic) {
-        window.location.href = "/post/post?topic=" + encodeURIComponent(topic);
-    }
-</script>
-
-
 <section class="section">
     <div class="top-container">
         <h1 class="topic-title" style="font-size: 35px">Topics List</h1>
@@ -48,6 +38,10 @@
             const topicText = topics[i].innerText.toLowerCase();
             topics[i].style.display = topicText.includes(input) ? 'block' : 'none';
         }
+    }
+
+    function redirectToMessages(topic) {
+        window.location.href = "/post/post?topic=" + encodeURIComponent(topic);
     }
 </script>
 

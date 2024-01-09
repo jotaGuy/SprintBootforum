@@ -22,3 +22,5 @@ public class UserRole {
     private String roleName;
 
 }
+
+// if user is deleted then must delete topics, post, and comments

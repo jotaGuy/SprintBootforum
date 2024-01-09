@@ -12,6 +12,8 @@
         <label for="email">Email:</label>
         <input type="text" name="email" id="email">
 
+
+
         <!-- Radio button -->
         <label>Gender:</label>
         <input type="radio" name="gender" value="male" id="male"><label for="male">Male</label>

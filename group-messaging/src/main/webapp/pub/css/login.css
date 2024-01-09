@@ -85,8 +85,18 @@ a {
     background-color: #FE8E02;
     cursor: pointer;
 }
-.signup:active {
+
+.label-color-selector {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #FF8800; /* Text color for the dropdown label */
 }
+
+#colorSelector {
+    padding: 10px;
+    font-size: 16px;
+}
+
 .footer {
     font-size: 36px;
     margin-top: auto; /* Push the footer to the bottom */
@@ -97,3 +107,4 @@ a {
     text-align: center;
     height: 100px;
 }
+

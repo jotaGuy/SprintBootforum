@@ -33,7 +33,7 @@ public class CommentsController {
     private CommentService commentService;
 
     @GetMapping("/comments/comments")
-    public ModelAndView displayMessages(@RequestParam(required = true) Integer postId) {
+    public ModelAndView displayMessages(@RequestParam(required = false) Integer postId) {
         ModelAndView response = new ModelAndView("comments/comments");
 
         List<Comments> comments = commentDAO.findByPostId(postId);
@@ -44,6 +44,7 @@ public class CommentsController {
 
         return response;
     }
+
 
     @PostMapping("/comments/submitComment")
     public ModelAndView submitComment(

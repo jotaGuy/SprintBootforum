@@ -45,7 +45,7 @@
                         <!-- Hidden input field for postId -->
                         <input type="hidden" name="postId" value="${param.postId}" />
                         <label for="comment-input">
-                                <input name="comment" type="text" id="comment-input" placeholder="Enter your opinion..." oninput="filterList()">
+                                <input style="color: whitesmoke" name="comment" type="text" id="comment-input" placeholder="Enter your opinion..." oninput="filterList()">
                         </label>
                         <button type="submit" class="btn">Send</button>
                 </form>

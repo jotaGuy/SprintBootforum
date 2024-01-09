@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Forum For All</title>
 
     <link href="../../../pub/css/global-style.css" rel="stylesheet">
     <link href="../../../pub/css/navbar.css" rel="stylesheet">
@@ -23,11 +23,14 @@
             </sec:authorize>
             <sec:authorize access="hasAnyAuthority('ADMIN')">
                 <li class="nav-item">
-                    <a class="nav-link" href="">Admin</a>
+                    <a class="nav-link" href="/admin/index">Admin</a>
                 </li>
             </sec:authorize>
             <li class="nav-item">
                 <a class="nav-link" href="/topics/topics">Search Topics</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/about">About Me</a>
             </li>
             <sec:authorize access="isAuthenticated()">
                 <li class="nav-item">

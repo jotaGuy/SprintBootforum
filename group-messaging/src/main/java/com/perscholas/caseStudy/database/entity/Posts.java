@@ -27,4 +27,5 @@ public class Posts {
 
     @Column(name = "topic")
     private String topic;
+
 }

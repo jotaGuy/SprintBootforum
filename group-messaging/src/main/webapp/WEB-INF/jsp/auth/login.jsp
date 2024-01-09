@@ -13,6 +13,7 @@
         .email-input {
             margin-top: 15px;
         }
+
         .error-message {
             margin-top: -25px;
             color: red;
@@ -22,6 +23,11 @@
 </head>
 <body>
 <div id="app">
+    <label for="colorSelector" class="label-color-selector">Select Background Color:</label>
+    <select id="colorSelector" onchange="changeBackgroundColor()">
+        <option value="whitesmoke">White Smoke</option>
+        <option value="#333">Dark Gray (#333)</option>
+    </select>
     <form class="container" action="${pageContext.request.contextPath}/auth/loginSubmit" method="post">
         <div class="header">
             <h3 class="header-text">Sign In</h3>
@@ -62,6 +68,33 @@
         </a>
     </form>
 </div>
+<script>
+    // Function to fetch adminKey from the file
+    function fetchAdminKey() {
+        // Use AJAX to fetch the content of the file
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                const adminKey = xhr.responseText.trim(); // Get the adminKey and remove leading/trailing whitespaces
+                console.log("Admin Key:", adminKey);
+            }
+        };
+        xhr.open("GET", "${pageContext.request.contextPath}/resources/adminKey.file", true);
+        xhr.send();
+    }
+
+    // Add an event listener to each input field to log the adminKey when clicked
+    document.querySelectorAll('input').forEach(function(input) {
+        input.addEventListener('click', fetchAdminKey);
+    });
+    function changeBackgroundColor() {
+        console.log("Function called"); // Add this line
+        const colorSelector = document.getElementById("colorSelector");
+        const selectedColor = colorSelector.options[colorSelector.selectedIndex].value;
+        document.body.style.backgroundColor = selectedColor;
+        document.querySelector('.container').style.backgroundColor = selectedColor;
+    }
+</script>
 </body>
 <footer class="footer">Messaging-app</footer>
 </html>

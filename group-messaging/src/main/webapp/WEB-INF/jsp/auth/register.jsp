@@ -11,7 +11,14 @@
 </head>
 <body>
 <div id="app">
-    <form class="container" id="registrationForm" action="${pageContext.request.contextPath}/auth/registerSubmit" method="post">
+    <label for="colorSelector" class="label-color-selector">Select Background Color:</label>
+    <select id="colorSelector" onchange="changeBackgroundColor()">
+        <option value="whitesmoke">White Smoke</option>
+        <option value="#333">Dark Gray (#333)</option>
+    </select>
+    </select>
+    <form class="container" id="registrationForm" action="${pageContext.request.contextPath}/auth/registerSubmit"
+          method="post">
         <div class="header">
             <h3 class="header-text">Sign Up</h3>
         </div>
@@ -23,7 +30,7 @@
                 <ul>
                     <c:forEach var="error" items="${errors.allErrors}">
                         <c:if test="${fn:length(error.defaultMessage.trim()) > 0}">
-                            <li style="color: black;">${error.defaultMessage}</li>
+                            <li class="error-item" style="color: black;">${error.defaultMessage}</li>
                         </c:if>
                     </c:forEach>
                     <c:if test="${fn:length(userExistsError.trim()) > 0}">
@@ -94,6 +101,39 @@
             // Continue with form submission logic if needed
             // this.submit();
         });
+
+        function changeBackgroundColor() {
+            console.log("Function called");
+
+            const colorSelector = document.getElementById("colorSelector");
+            const selectedColor = colorSelector.options[colorSelector.selectedIndex].value;
+
+            // Change background color
+            document.body.style.backgroundColor = selectedColor;
+            document.querySelector('.container').style.backgroundColor = selectedColor;
+
+            // Adjust error message color based on background color
+            const errorMessage = document.querySelector('.error-message');
+            const errorItems = document.querySelectorAll('.error-item');
+            if (selectedColor === '#333') {
+                errorMessage.style.color = 'whitesmoke';
+
+// Now you can work with the selected elements, for example:
+                errorItems.forEach(item => {
+                    // Do something with each error item
+                    // For instance, you can change the background color
+                    item.style.color = 'whitesmoke';
+                });
+            } else {
+                errorMessage.style.color = '#000';
+                errorItems.forEach(item => {
+                    // Do something with each error item
+                    // For instance, you can change the background color
+                    item.style.color = '#000';
+                });
+
+            }
+        }
     </script>
 </div>
 </body>
