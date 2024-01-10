@@ -98,7 +98,7 @@ public class PostController {
         postService.createPost(form);
 
         String topic = form.getTopic();
-        response.setViewName("redirect:/post/post?topicId=" + URLEncoder.encode(String.valueOf(topic), StandardCharsets.UTF_8));
+        response.setViewName("redirect:/post/post?topic=" + URLEncoder.encode(String.valueOf(topic), StandardCharsets.UTF_8));
 
         return response;
     }
